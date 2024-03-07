@@ -65,7 +65,24 @@ namespace TheDebtBookv2.ViewModels
         {
             var debtorDatabase = await _database.GetDebtorId(debtorId);
             Debtor = debtorDatabase;
-            var debtorDatabase
+            var debtorDatabase = await _database.GetAccumulatedDebt(debtorId);
+            Debt = new List<Debt>(debtorDatabase);
+        }
+
+        private async void AddDebtAsync(Debt debt)
+        {
+            await _database.AddDebt(debt);
+            LoadDataAsync(debt.DebtorId);
+        }
+
+        private async void UpdateAcculumatedDebtAsync(int debtorId)
+        {
+            var debtDatabase = await _database.GetAccumulatedDebt(debtorId);
+            var accumulatedDebt = debtDatabase.Sum(x => x.Debt);
+            var debtorDatabase = await _database.GetDebtorId(debtorId);
+            debtorDatabase.AccumulatedDebt = accumulatedDebt;
+            await _database.UpdateDebtorList(debtorDatabase);
+            Debtor = debtorDatabase;
         }
     }
 }
