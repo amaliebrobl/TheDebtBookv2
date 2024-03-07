@@ -37,13 +37,13 @@ namespace TheDebtBookv2.ViewModels
 
             var debt = new Debt()
             {
-                Debt = debtValue ?? 0,
+                Value = debtValue ?? 0,
                 Date = date ?? DateTime.Now,
                 DebtorId = Debtor.Id,
             };
 
             AddDebtAsync(debt);
-            UpdateAccumulatedDebtAsync(debt.DebtId);
+            UpdateAccumulatedDebtAsync(debt.DebtorId);
         }
 
         [RelayCommand]
@@ -65,8 +65,8 @@ namespace TheDebtBookv2.ViewModels
         {
             var debtorDatabase = await _database.GetDebtorId(debtorId);
             Debtor = debtorDatabase;
-            var debtorDatabase = await _database.GetAccumulatedDebt(debtorId);
-            Debt = new List<Debt>(debtorDatabase);
+            var debtDatabase = await _database.GetAccumulatedDebt(debtorId);
+            Debt = new List<Debt>(debtDatabase);
         }
 
         private async void AddDebtAsync(Debt debt)
@@ -75,7 +75,7 @@ namespace TheDebtBookv2.ViewModels
             LoadDataAsync(debt.DebtorId);
         }
 
-        private async void UpdateAcculumatedDebtAsync(int debtorId)
+        private async void UpdateAccumulatedDebtAsync(int debtorId)
         {
             var debtDatabase = await _database.GetAccumulatedDebt(debtorId);
             var accumulatedDebt = debtDatabase.Sum(x => x.Debt);

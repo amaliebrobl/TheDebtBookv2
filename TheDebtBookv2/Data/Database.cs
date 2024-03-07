@@ -58,7 +58,7 @@ namespace TheDebtBookv2.Data
 
 
         // Opdaterer listen på forsiden
-        public async Task<int> UpdateDebtorListe(Debtor item)
+        public async Task<int> UpdateDebtorList(Debtor item)
         {
             return await _connection.UpdateAsync(item);
         }

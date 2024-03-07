@@ -12,7 +12,7 @@ namespace TheDebtBookv2.Models
         [PrimaryKey, AutoIncrement]
         public int DebtId { get; set; }
         public double Value { get; set; } = 0;
-        public DateTime Data { get; set; }
+        public DateTime Date { get; set; }
         public int DebtorId {  get; set; }
     }
 }
