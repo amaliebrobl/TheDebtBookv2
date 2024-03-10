@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:TheDebtBookv2.Views"
              x:Class="TheDebtBookv2.Pages.MainPage"
              Title="MainPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid Padding="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button Text="Add Debtor"
+            Grid.Column="2"
+            Clicked="AddDebtor_Clicked"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            WidthRequest="200"
+            HeightRequest="50" />
+    </Grid>
 </ContentPage>
