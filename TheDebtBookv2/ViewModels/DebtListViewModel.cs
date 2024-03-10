@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheDebtBookv2.Data;
 using TheDebtBookv2.Models;
+using TheDebtBookv2.Pages;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 

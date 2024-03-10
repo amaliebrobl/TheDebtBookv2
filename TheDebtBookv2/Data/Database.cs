@@ -51,7 +51,7 @@ namespace TheDebtBookv2.Data
         }
 
         // Tilføjer en "Debt"/value til en bestemt "debtor"
-        public async Task<double> AddDebt(Debtor item)
+        public async Task<double> AddDebt(Debt item)
         {
             return await _connection.InsertAsync(item);
         }
