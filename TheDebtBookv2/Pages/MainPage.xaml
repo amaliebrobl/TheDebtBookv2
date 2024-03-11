@@ -4,18 +4,19 @@
              xmlns:ContentViews="clr-namespace:TheDebtBookv2.ContentViews"
              x:Class="TheDebtBookv2.Pages.MainPage"
              Title="MainPage">
-    <Grid Padding="10">
+    <Grid Padding="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button Text="Add Debtor"
-            Grid.Column="2"
+            Grid.Column="3"
+            Grid.Row="2"
             Clicked="AddDebtor_Clicked"
             HorizontalOptions="Center"
             VerticalOptions="Start"
-            WidthRequest="200"
-            HeightRequest="50" />
+            WidthRequest="180"
+            HeightRequest="30" />
     </Grid>
 </ContentPage>

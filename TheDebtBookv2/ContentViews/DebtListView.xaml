@@ -12,9 +12,9 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Text="Debt"
+        <Label Text="List of debtors and their debts"
                Grid.Row="0"
-               FontSize="Title"></Label>
+               FontSize="Small"></Label>
         <Button Text="Update"
                 Grid.Row="1"
                 Command="{Binding LoadDataCommand}"></Button>
@@ -39,7 +39,6 @@
                                     Grid.Column="2"
                                     Command="{Binding BindingContext.ViewDebtorCommand, Source={x:Reference Debtors}}"
                                     CommandParameter="{Binding Id}">
-
                             </Button>
                         </Grid>
                     </ViewCell>

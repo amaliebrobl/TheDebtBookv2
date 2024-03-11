@@ -8,6 +8,7 @@ using TheDebtBookv2.Models;
 using TheDebtBookv2.Pages;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
+using TheDebtBookv2.ContentViews;
 
 namespace TheDebtBookv2.ViewModels
 {
@@ -33,7 +34,7 @@ namespace TheDebtBookv2.ViewModels
                 return;
             }
 
-            _navigation.PushAsync(new MainPage());
+            _navigation.PushAsync(new ShowDebtor(debtorId));
         }
 
         public DebtListViewModel(INavigation navigation)

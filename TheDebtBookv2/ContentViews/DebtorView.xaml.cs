@@ -10,6 +10,5 @@ public partial class DebtorView : ContentView
         _viewModel = new DebtorViewModel(debtorId);
         InitializeComponent();
         BindingContext = _viewModel;
-
     }
 }
