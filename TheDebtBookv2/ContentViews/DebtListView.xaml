@@ -37,7 +37,7 @@
                                    Grid.Column="1"></Label>
                             <Button Text="View all debt"
                                     Grid.Column="2"
-                                    Command="{Binding BindingContext.ViewDebtorCommand,Source={x:Reference Debtors}}"
+                                    Command="{Binding BindingContext.ViewDebtorCommand, Source={x:Reference Debtors}}"
                                     CommandParameter="{Binding Id}">
 
                             </Button>

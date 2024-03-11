@@ -1,18 +1,20 @@
 using TheDebtBookv2.ContentViews;
+using TheDebtBookv2.ViewModels;
 
 namespace TheDebtBookv2.Pages;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
+    public MainPage()
 	{
-		InitializeComponent();
+        InitializeComponent();
 
         var debtListView = new DebtListView(Navigation);
         Grid.SetColumn(debtListView, 0);
         Grid.SetColumnSpan(debtListView, 2);
         ((Grid)Content).Children.Add(debtListView);
     }
+
 
     private void AddDebtor_Clicked(object sender, EventArgs e)
     {
