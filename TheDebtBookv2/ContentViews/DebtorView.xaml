@@ -34,7 +34,7 @@
                 Command="{Binding LoadDataCommand}"></Button>
         <ListView x:Name="Debtors"
                   Grid.Row="3"
-                  ItemsSource="Debts">
+                  ItemsSource="{Binding Debts}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
