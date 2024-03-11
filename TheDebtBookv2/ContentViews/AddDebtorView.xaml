@@ -4,8 +4,13 @@
              x:Class="TheDebtBookv2.ContentViews.AddDebtorView">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
+            Text="Add Debtor"
+            FontSize="Title"
+            VerticalOptions="CenterAndExpand" 
             HorizontalOptions="Center" />
+        <Entry Placeholder="Name"
+               Text="{Binding Name}"></Entry>
+        <Button Text="Add"
+                Command="{Binding AddDebtorCommand}"></Button>
     </VerticalStackLayout>
 </ContentView>

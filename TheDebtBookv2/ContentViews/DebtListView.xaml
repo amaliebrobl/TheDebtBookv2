@@ -2,10 +2,51 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TheDebtBookv2.ContentViews.DebtListView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*">
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Text="Debt"
+               Grid.Row="0"
+               FontSize="Title"></Label>
+        <Button Text="Update"
+                Grid.Row="1"
+                Command="{Binding LoadDataCommand}"></Button>
+        <ListView x:Name="Debtors"
+                  Grid.Row="2"
+                  ItemsSource="{Binding Debtors}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Name}"
+                                   Grid.Column="0"></Label>
+                            <Label Text="{Binding AccumulatedDebt,StringFormat='{0:C}'}"
+                                   Grid.Column="1"></Label>
+                            <Button Text="View all debt"
+                                    Grid.Column="2"
+                                    Command="{Binding BindingContext.ViewDebtorCommand,Source={x:Reference Debtors}}"
+                                    CommandParameter="{Binding Id}">
+
+                            </Button>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </Grid>
+
 </ContentView>
