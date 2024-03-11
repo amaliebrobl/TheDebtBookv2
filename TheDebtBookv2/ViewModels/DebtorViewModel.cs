@@ -19,7 +19,7 @@ namespace TheDebtBookv2.ViewModels
         public Debtor? _debtor;
 
         [ObservableProperty]
-        public Debt? _debt;
+        public List<Debt>? _debts;
 
         [ObservableProperty]
         public double? debtValue;
@@ -66,7 +66,7 @@ namespace TheDebtBookv2.ViewModels
             var debtorDatabase = await _database.GetDebtorId(debtorId);
             Debtor = debtorDatabase;
             var debtDatabase = await _database.GetAccumulatedDebt(debtorId);
-            var Debt = new List<Debt>(debtDatabase);
+            Debts = new List<Debt>(debtDatabase);
         }
 
         private async void AddDebtAsync(Debt debt)
