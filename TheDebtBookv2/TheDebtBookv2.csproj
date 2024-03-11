@@ -65,6 +65,9 @@
 	  <MauiXaml Update="ContentViews\DebtorView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ContentViews\Dictionary1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\AddDebtor.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

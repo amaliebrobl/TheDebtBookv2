@@ -2,6 +2,14 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TheDebtBookv2.ContentViews.DebtorView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    
     <Grid Padding="20"
           RowSpacing="20"
           ColumnSpacing="20">
@@ -21,17 +29,19 @@
                                Spacing="10"
                                HorizontalOptions="Center">
             <Label Text="{Binding Debtor.Name}"
-                   FontSize="Title"></Label>
+                   Style="{StaticResource TitleLabelStyle}"></Label>
+            
         </HorizontalStackLayout>
         <Label Text="Debts"
                Grid.Row="1"
                Grid.Column="0"
-               FontSize="Title"
+               Style="{StaticResource TitleLabelStyle}"
                HorizontalOptions="Center"></Label>
         <Button Text="Update"
                 Grid.Row="2"
                 Grid.Column="0"
-                Command="{Binding LoadDataCommand}"></Button>
+                Command="{Binding LoadDataCommand}"
+                Style="{StaticResource DefaultButtonStyle}"></Button>
         <ListView x:Name="Debtors"
                   Grid.Row="3"
                   ItemsSource="{Binding Debts}">
@@ -45,11 +55,14 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Label Text="{Binding DebtId}"
-                                   Grid.Column="0"></Label>
+                                   Grid.Column="0"
+                                   Style="{StaticResource GridCellStyle}"></Label>
                             <Label Text="{Binding Date}"
-                                   Grid.Column="1"></Label>
+                                   Grid.Column="1"
+                                   Style="{StaticResource GridCellStyle}"></Label>
                             <Label Text="{Binding Value,StringFormat='{0:C}'}"
-                                   Grid.Column="2"></Label>
+                                   Grid.Column="2"
+                                   Style="{StaticResource GridCellStyle}"></Label>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
@@ -59,12 +72,15 @@
                              Grid.RowSpan="3"
                              Grid.Column="1">
             <Label Text="Add Debt"
-                   FontSize="Title"></Label>
+                   Style="{StaticResource TitleLabelStyle}"></Label>
             <Entry Placeholder="Enter value"
-                   Text="{Binding DebtValue}"></Entry>
-            <DatePicker Date="{Binding Date}"></DatePicker>
+                   Text="{Binding DebtValue}"
+                   Style="{StaticResource DefaultEntryStyle}"></Entry>
+            <DatePicker Date="{Binding Date}"
+                        Style="{StaticResource DefaultDatePickerStyle}"></DatePicker>
             <Button Text="Add"
-                    Command="{Binding AddDebtCommand}"></Button>
+                    Command="{Binding AddDebtCommand}"
+                    Style="{StaticResource DefaultButtonStyle}"></Button>
         </VerticalStackLayout>
     </Grid>
 </ContentView>
