@@ -2,6 +2,23 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TheDebtBookv2.ContentViews.AddDebtorView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="Gray"/>
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Green"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    
     <VerticalStackLayout>
         <Label 
             Text="Add Debtor"
@@ -9,8 +26,10 @@
             VerticalOptions="CenterAndExpand" 
             HorizontalOptions="Center" />
         <Entry Placeholder="Name"
-               Text="{Binding Name}"></Entry>
+               Text="{Binding Name}"
+               Style="{StaticResource EntryStyle}"></Entry>
         <Button Text="Add"
-                Command="{Binding AddDebtorCommand}"></Button>
+                Command="{Binding AddDebtorCommand}"
+                Style="{StaticResource ButtonStyle}"></Button>
     </VerticalStackLayout>
 </ContentView>
