@@ -5,7 +5,7 @@
     <VerticalStackLayout>
         <Label 
             Text="Add Debtor"
-            FontSize="Title"
+            Style="{StaticResource labelStyle}"
             VerticalOptions="CenterAndExpand" 
             HorizontalOptions="Center" />
         <Entry Placeholder="Name"

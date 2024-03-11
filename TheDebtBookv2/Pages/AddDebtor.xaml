@@ -4,6 +4,13 @@
              xmlns:ContentViews="clr-namespace:TheDebtBookv2.ContentViews"
              x:Class="TheDebtBookv2.Pages.AddDebtor"
              Title="AddDebtor">
+    <ContentPage.Resources>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Center"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+        </Style>
+    </ContentPage.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
