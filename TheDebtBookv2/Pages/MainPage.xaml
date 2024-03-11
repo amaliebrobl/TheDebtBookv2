@@ -4,6 +4,17 @@
              xmlns:ContentViews="clr-namespace:TheDebtBookv2.ContentViews"
              x:Class="TheDebtBookv2.Pages.MainPage"
              Title="MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="WidthRequest" Value="180"/>
+                <Setter Property="HeightRequest" Value="30"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <Grid Padding="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -14,9 +25,6 @@
             Grid.Column="3"
             Grid.Row="2"
             Clicked="AddDebtor_Clicked"
-            HorizontalOptions="Center"
-            VerticalOptions="Start"
-            WidthRequest="180"
-            HeightRequest="30" />
+            Style="{StaticResource ButtonStyle}"/>
     </Grid>
 </ContentPage>
