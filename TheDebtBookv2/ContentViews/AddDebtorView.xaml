@@ -21,7 +21,7 @@
     
     <VerticalStackLayout>
         <Label 
-            Text="Add Debtor"
+            Text="Add new debtor"
             Style="{StaticResource labelStyle}"
             VerticalOptions="CenterAndExpand" 
             HorizontalOptions="Center" />
