@@ -7,6 +7,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Orange"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Start"/>
                 <Setter Property="WidthRequest" Value="180"/>

@@ -7,9 +7,21 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Dictionary1.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+
+            <Style x:Key="NameLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Orange"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
         </ResourceDictionary>
     </ContentView.Resources>
-    
+
     <Grid Padding="20"
           RowSpacing="20"
           ColumnSpacing="20">
@@ -29,19 +41,19 @@
                                Spacing="10"
                                HorizontalOptions="Center">
             <Label Text="{Binding Debtor.Name}"
-                   Style="{StaticResource TitleLabelStyle}"></Label>
+                   Style="{StaticResource NameLabelStyle}"></Label>
             
         </HorizontalStackLayout>
-        <Label Text="Debts"
+        <Label Text="List of debts:"
                Grid.Row="1"
                Grid.Column="0"
-               Style="{StaticResource TitleLabelStyle}"
+               Style="{StaticResource LabelStyle}"
                HorizontalOptions="Center"></Label>
         <Button Text="Update"
                 Grid.Row="2"
                 Grid.Column="0"
                 Command="{Binding LoadDataCommand}"
-                Style="{StaticResource DefaultButtonStyle}"></Button>
+                Style="{StaticResource ButtonStyle}"></Button>
         <ListView x:Name="Debtors"
                   Grid.Row="3"
                   ItemsSource="{Binding Debts}">
@@ -72,7 +84,7 @@
                              Grid.RowSpan="3"
                              Grid.Column="1">
             <Label Text="Add Debt"
-                   Style="{StaticResource TitleLabelStyle}"></Label>
+                   Style="{StaticResource LabelStyle}"></Label>
             <Entry Placeholder="Enter value"
                    Text="{Binding DebtValue}"
                    Style="{StaticResource DefaultEntryStyle}"></Entry>
@@ -80,7 +92,7 @@
                         Style="{StaticResource DefaultDatePickerStyle}"></DatePicker>
             <Button Text="Add"
                     Command="{Binding AddDebtCommand}"
-                    Style="{StaticResource DefaultButtonStyle}"></Button>
+                    Style="{StaticResource ButtonStyle}"></Button>
         </VerticalStackLayout>
     </Grid>
 </ContentView>

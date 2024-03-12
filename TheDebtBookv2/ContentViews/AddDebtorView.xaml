@@ -8,12 +8,16 @@
                 <Setter Property="FontSize" Value="20"/>
             </Style>
 
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
+
             <Style x:Key="EntryStyle" TargetType="Entry">
                 <Setter Property="PlaceholderColor" Value="Gray"/>
             </Style>
 
             <Style x:Key="ButtonStyle" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="Green"/>
+                <Setter Property="BackgroundColor" Value="Orange"/>
                 <Setter Property="TextColor" Value="White"/>
             </Style>
         </ResourceDictionary>
@@ -22,7 +26,7 @@
     <VerticalStackLayout>
         <Label 
             Text="Add new debtor"
-            Style="{StaticResource labelStyle}"
+            Style="{StaticResource TitleLabelStyle}"
             VerticalOptions="CenterAndExpand" 
             HorizontalOptions="Center" />
         <Entry Placeholder="Name"
